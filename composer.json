@@ -1,0 +1,7 @@
+{
+  "name": "badegguk/hard-boiled-security",
+  "description": "A simple plugin that hardens some common Wordpress vulnerabilities.",
+  "homepage": "https://github.com/badegguk-packagist/hard-boiled-security.git",
+  "type": "wordpress-plugin",
+  "license": "GPLv3"
+}
