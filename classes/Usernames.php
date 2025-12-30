@@ -2,6 +2,10 @@
 
 namespace bedhbs;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 class Usernames
 {
     public function __construct()
@@ -27,7 +31,7 @@ class Usernames
 
         if(!trim($nicename) || username_exists($nicename)) {
             $args['user_nicename'] = shorthash($userData['user_login']);
-            $args['display_name'] = __('Unnamed User', BEDHBS);
+            $args['display_name'] = __('Unnamed User', 'hard-boiled-security');
         }
 
         wp_update_user($args);
@@ -39,21 +43,22 @@ class Usernames
 
         <p>&nbsp;</p>
         <hr/>
-        <h2><?php _e('Hard Boiled Security', BEDHBS) ?></h2>
+        <h2><?php esc_html_e('Hard Boiled Security', 'hard-boiled-security') ?></h2>
         <table class="form-table">
             <tr>
                 <th>
                     <label for="user_nicename">
-                        <?php _e('User Nicename', BEDHBS) ?>
-                        <span class="description">(required)</span>
+                        <?php esc_html_e('User Nicename', 'hard-boiled-security') ?>
+                        <span class="description">(<?php esc_html_e('required', 'hard-boiled-security') ?>)</span>
                     </label>
                 </th>
                 <td>
                     <input type="text" name="user_nicename" id="user_nicename" value="<?php echo esc_attr( $user->user_nicename ); ?>" class="regular-text" /><br />
                     <p class="description">
-                        <?php _e('The nicename is used in the user profile\'s permalink. For security reasons, it should be different from the username', BEDHBS) ?>
-                        (<strong><?= get_author_posts_url($user->ID) ?></strong>).
+                        <?php esc_html_e('The nicename is used in the user profile\'s permalink. For security reasons, it should be different from the username', 'hard-boiled-security') ?>
+                        (<strong><?php echo esc_html(get_author_posts_url($user->ID)) ?></strong>).
                     </p>
+                    <?php wp_nonce_field( 'save_user_nicename', 'user_nicename_nonce' ); ?>
                 </td>
             </tr>
         </table>
@@ -67,8 +72,12 @@ class Usernames
             return false;
         }
 
+        if ( ! isset( $_POST['user_nicename_nonce'] ) || ! wp_verify_nonce( wp_unslash($_POST['user_nicename_nonce']), 'save_user_nicename' ) ) {
+            return false;
+        }
+
         if ( isset( $_POST['user_nicename'] ) ) {
-            $nicename = $_POST['user_nicename'];
+            $nicename = wp_unslash($_POST['user_nicename']);
 
             $args = [
                 'ID' => $userID,

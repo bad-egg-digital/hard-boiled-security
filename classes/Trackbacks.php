@@ -2,6 +2,10 @@
 
 namespace bedhbs;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 class Trackbacks
 {
     public function __construct()

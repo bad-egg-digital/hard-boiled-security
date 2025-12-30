@@ -2,13 +2,16 @@
 
 namespace bedhbs;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /*
  * Generating short hashes in PHP
  * Roy Tanck · Posted on October 17, 2021
  * https://roytanck.com/2021/10/17/generating-short-hashes-in-php/
  *
  */
-
 
 /**
  * Create a short, fairly unique, urlsafe hash for the input string.
