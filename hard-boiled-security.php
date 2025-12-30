@@ -10,12 +10,12 @@
  * Plugin URI:        https://github.com/bad-egg-digital/hard-boiled-security
  * Description:       A simple plugin that hardens some common Wordpress vulnerabilities.
  * Version:           1.0.1
- * Requires at least: 5.2
+ * Requires at least: 6.9
  * Requires PHP:      8.1
  * Author:            Bad Egg Digital
  * Author URI:        https://www.badegg.uk
  * Text Domain:       hard-boiled-security
- * License:           GPLv3
+ * License:           GPL-3.0-or-later
  */
 
 namespace bedhbs;
