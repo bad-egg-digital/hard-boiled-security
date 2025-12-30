@@ -7,7 +7,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Hard Boiled Security
- * Plugin URI:        https://www.badegg.uk
+ * Plugin URI:        https://github.com/bad-egg-digital/hard-boiled-security
  * Description:       A simple plugin that hardens some common Wordpress vulnerabilities.
  * Version:           1.0.1
  * Requires at least: 5.2
