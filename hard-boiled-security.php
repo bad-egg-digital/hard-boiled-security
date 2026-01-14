@@ -20,23 +20,23 @@
 
 namespace bedhbs;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 // Disable WP Admin File Editor
-if(!defined('DISALLOW_FILE_EDIT')) define( 'DISALLOW_FILE_EDIT', true );
+if (!defined('DISALLOW_FILE_EDIT') && !DISALLOW_FILE_EDIT) {
+    define('DISALLOW_FILE_EDIT', true);
+}
 
 require_once(__DIR__ . '/lib/shorthash.php');
 
-foreach (glob( __DIR__ . '/classes/*.php' ) as $bedhbs_file) {
+foreach (glob(__DIR__ . '/classes/*.php') as $bedhbs_file) {
     $bedhbs_class = __NAMESPACE__ . '\\' . pathinfo($bedhbs_file, PATHINFO_FILENAME);
 
     require_once($bedhbs_file);
 
-    if(class_exists($bedhbs_class)) {
+    if (class_exists($bedhbs_class)) {
         new $bedhbs_class();
     }
-
 }
-
