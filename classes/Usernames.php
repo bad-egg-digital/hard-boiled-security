@@ -71,8 +71,6 @@ class Usernames
 
                     </p>
                     <p class="description">
-
-
                         <?php
                             esc_html_e(
                                 'This user\'s profile URL is ',
@@ -80,7 +78,7 @@ class Usernames
                             );
                         ?>
 
-                        <a href="<?php echo get_author_posts_url($user->ID) ?>" target="_blank"><?php echo esc_html(get_author_posts_url($user->ID)) ?></a>.
+                        <a href="<?php echo esc_html(get_author_posts_url($user->ID)) ?>" target="_blank"><?php echo esc_html(get_author_posts_url($user->ID)) ?></a>.
                     </p>
                     <?php
                         wp_nonce_field('save_user_nicename', 'user_nicename_nonce');
