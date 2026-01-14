@@ -20,7 +20,7 @@ This plugin was inspired by many painful situations we helped people out of over
 - Tested and working with [Roots.io's Bedrock](https://roots.io/bedrock) directory structure as a mu-plugin.
 
 ### Planned features
-There is more we can do to harden your Wordpress website's security. The features we will implement in the future will be opinionated and zero to low configuration.
+There is more we can do to harden your Wordpress website's security. The features we will implement in the future will also be opinionated and require little to no configuration.
 - Block brute force attacks by limiting failed login attempts within a reasonable timeframe
 - Prevent email server spam and abuse by limiting password reset requests
 - Logging when brute force and spam prevention measures are triggered with optional opt-in email notifications
