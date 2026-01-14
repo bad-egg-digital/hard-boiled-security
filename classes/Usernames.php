@@ -63,10 +63,24 @@ class Usernames
                     <p class="description">
                         <?php
                             esc_html_e(
-                                'The nicename is used in the user profile\'s permalink. For security reasons, it should be different from the username',
+                                'The nicename is used in the user profile\'s permalink.
+                                For security reasons, it should be different from the username.',
                                 'hard-boiled-security',
-                            ) ?>
-                        (<strong><?php echo esc_html(get_author_posts_url($user->ID)) ?></strong>).
+                            );
+                        ?>
+
+                    </p>
+                    <p class="description">
+
+
+                        <?php
+                            esc_html_e(
+                                'This user\'s profile URL is ',
+                                'hard-boiled-security',
+                            );
+                        ?>
+
+                        <a href="<?php echo get_author_posts_url($user->ID) ?>" target="_blank"><?php echo esc_html(get_author_posts_url($user->ID)) ?></a>.
                     </p>
                     <?php
                         wp_nonce_field('save_user_nicename', 'user_nicename_nonce');
