@@ -102,7 +102,7 @@ class Usernames
         }
 
         if (isset($_POST['user_nicename'])) {
-            $nicename = wp_unslash($_POST['user_nicename']);
+            $nicename = wp_unslash(sanitize_text_field($_POST['user_nicename']));
 
             $args = [
                 'ID' => $userID,

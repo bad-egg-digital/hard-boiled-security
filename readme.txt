@@ -7,7 +7,10 @@ License:           GPL-3.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
 
-## A simple plugin that hardens some common Wordpress vulnerabilities.
+A simple plugin that hardens some common Wordpress vulnerabilities
+
+== Description ==
+
 **Hard Boiled Security** stands in contrast to the many heavily marketed security plugins available for Wordpress. Rather than providing a barrage of configuration options and intrusive prompts and upsells, we silently close the most common security vulnerabilities.
 
 This plugin was inspired by many painful situations we helped people out of over the years and developed to help people who do not code secure websites their with minimal effort.
